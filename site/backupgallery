@@ -1,0 +1,46 @@
+
+function addRightButtonEvents(button){
+  console.log(imagesDiv);
+  button.addEventListener('mouseover',function(e){
+    button.style.width = '10vh';
+    button.style.paddingLeft = '3vh';
+  });
+  button.addEventListener('mouseout', function(e){
+    button.style.width = '7vh';
+    button.style.padding = '.7vh';
+  });
+  button.addEventListener('mousedown',function(e){
+    imagesDiv[0].style.width = '0px';
+    imagesDiv[3].style.width = '34%';
+    let div = imagesDiv[0];
+    setTimeout(function(){
+      div.outerHTML = '';
+      document.getElementById('splash').appendChild(div);
+    }, 700);
+    imagesDiv.splice(0,1);
+    imagesDiv.push(div);
+    console.log(imagesDiv);
+  });
+}
+
+function addLeftButtonEvents(button){
+  console.log(imagesDiv);
+  button.addEventListener('mouseover',function(e){
+    button.style.width = '10vh';
+    button.style.paddingLeft = '3vh';
+  });
+  button.addEventListener('mouseout', function(e){
+    button.style.width = '7vh';
+    button.style.padding = '.7vh';
+  });
+  button.addEventListener('mousedown',function(e){
+    //imagesDiv[2].outerHTML = "";
+    let div = imagesDiv.pop();
+    imagesDiv.unshift(div);
+    let splash = document.getElementById('splash');
+    splash.insertBefore(div,imagesDiv[1]);
+    imagesDiv[3].style.width = '0px';
+    manualGrow(imagesDiv[0],34,3);
+    console.log(imagesDiv);
+  });
+}
