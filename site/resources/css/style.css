@@ -1,5 +1,4 @@
 .body{
-  background:white;
   font-family: 'Source Sans Pro', sans-serif;
   background-attachment: fixed;
   background-size:cover;
@@ -18,13 +17,14 @@
   top: 0;
   left: 0;
   width: 100%;
-  z-index: 1501;
+  z-index: 5;
   height:10vh; /*100px;*/
   transition: all 0.4s;
   transition-property: all;
   transition-duration: 0.4s;
   transition-timing-function: initial;
   transition-delay: initial;
+  visibility: hidden;
 }
 
 .namebox{
@@ -35,7 +35,7 @@
   height:10vh;
   text-align: center;
   vertical-align: middle;
-  background: url(images/homepage/logowhite.png) no-repeat center;
+  background: url(http://da2r60hdk7vk8.cloudfront.net/site/resources/css/images/homepage/logowhite.png)/*url(images/homepage/logowhite.png)*/ no-repeat center;
   background-size: 35%;
   line-height: 10vh;
   font-size: 5vmin;
@@ -61,6 +61,7 @@
   top:0;
   right:0;
   height:10vh;
+  visibility: hidden;
   /*width:90%;*/
 }
 
@@ -71,14 +72,15 @@
   top:10vh;
   right:12vw;
   background: #1f2021;
-  height: 50vh;
+  height: 60vh;
   width: 20vw;
+  font-size: 2vmin;
+  z-index: 2000;
 }
 
 .dropdownItem{
   width:100%;
-  height:9%;
-  font-size: 2vmin;
+  height:15%;
   margin-bottom: 1%;
   background:#1f2021;
   text-align: center;
@@ -120,6 +122,9 @@
 
 .container{
   color: white;
+  min-height: 90vh;
+  background: transparent;
+  position: relative;
 }
 
 .splash{
@@ -127,9 +132,10 @@
   width:100%;
   display: flex;
   flex-direction:row;
+  /*
   -webkit-box-shadow: 0px 0px 55px 0px rgba(0,0,0,0.75);
 -moz-box-shadow: 0px 0px 55px 0px rgba(0,0,0,0.75);
-box-shadow: 0px 0px 55px 0px rgba(0,0,0,0.75);
+box-shadow: 0px 0px 55px 0px rgba(0,0,0,0.75);*/
 }
 
 .splashimage{
@@ -144,42 +150,54 @@ box-shadow: 0px 0px 55px 0px rgba(0,0,0,0.75);
 
 #splashimage0{
   background: green;
-  background: url(images/homepage/group3/splash3.png) no-repeat top center;
-  background-size: 200vmin;
-  /*background-size: 1300px;*/
+  background: url(http://da2r60hdk7vk8.cloudfront.net/site/resources/css/images/homepage/group3/splash3smaller.png)/*url(images/homepage/group3/splash3smaller.png)*/ no-repeat center top;
   background-size: cover;
+  /*background-size: 1300px;*/
+  /*background-size: cover;*/
 }
 
 #splashimage1{
   background: blue;
-  background: url(images/homepage/group2/splash2.png) no-repeat top center;
-  background-size: 200vmin;
+  background: url(http://da2r60hdk7vk8.cloudfront.net/site/resources/css/images/homepage/group1/splash1smaller.png)/*url(images/homepage/group1/splash1smaller.png)*/ no-repeat top center;
   background-size: cover;
 }
 
 #splashimage2{
   background:yellow;
-  background: url(images/homepage/group1/splash1.png) no-repeat top center;
+  background: url(http://da2r60hdk7vk8.cloudfront.net/site/resources/css/images/homepage/group4/splash4smaller.png)/*url(images/homepage/group4/splash4smaller.png)*/ no-repeat top center;
   background-size: 200vmin;
   background-size: cover;
 }
 
 #splashimage3{
   background:red;
-  background: url(images/homepage/group4/splash4.png) no-repeat top center;
+  background: url(http://da2r60hdk7vk8.cloudfront.net/site/resources/css/images/homepage/group2/splash2smaller.png)/*url(images/homepage/group2/splash2smaller.png)*/ no-repeat top center;
   background-size: 200vmin;
   background-size: cover;
+}
+
+
+.loadingScreen{
+  background:white;
+  width:100vw;
+  height:100vh;
+  position: fixed;
+  top: 0;
+  z-index: 10;
 }
 
 
 .splashEnterButton{
   width:10vmin;
   height:10vmin;
-  font-size: 2vmin;
+  min-height: 70px;
+  min-width: 70px;
+  font-size: calc(12px+2vmin);
+  font-weight:bold;
   color:black;
   position: absolute;
-  margin-top: 50vmin;
-  margin-left: 47%;
+  margin-top: calc(100px + 50vmin);
+  margin-left: 46vw;
   -moz-user-select: -moz-none;
   -khtml-user-select: none;
   -webkit-user-select: none;
@@ -188,22 +206,26 @@ box-shadow: 0px 0px 55px 0px rgba(0,0,0,0.75);
   cursor: pointer;
   text-align: center;
   vertical-align: middle;
-  line-height: 10vmin;
+  line-height: 70px;
   border: solid black .5vmin;
   font-weight: bolder;
+  opacity: 0;
 }
 
 .splashname{
-  width:60vw;
-  margin-left:20vw;
+  width:92vw;
+  margin-left:0vw;
   color: #89b2f4;
-  background: url(images/homepage/nametext.png) no-repeat top center;
-  background-size: 60vmin;
+  background-color: red;
+  background: url(http://da2r60hdk7vk8.cloudfront.net/site/resources/css/images/homepage/nametext.png)/*url(images/homepage/nametext.png)*/ no-repeat top center;
+  background-size:65vw;
   text-align: center;
   font-size: 10vmin;
   position:absolute;
-  margin-top:35vmin;
+  margin-top:calc(80px + 35vmin);
   height:15vmin;
+  margin-left: 4vw;
+  opacity: 0;
 }
 
 .splashsubtext{
@@ -222,6 +244,7 @@ box-shadow: 0px 0px 55px 0px rgba(0,0,0,0.75);
 }
 
 .splashLeftButton{
+  z-index: 1;
   background:#1c1c1c;
   position: absolute;
   color:white;
@@ -241,8 +264,10 @@ box-shadow: 0px 0px 55px 0px rgba(0,0,0,0.75);
 }
 
 .splashRightButton{
+  z-index: 1;
   background: #1c1c1c;
   position: absolute;
+  text-align:right;
   right:0;
   color:white;
   height:10vh;
@@ -288,38 +313,39 @@ box-shadow: 0px 0px 55px 0px rgba(0,0,0,0.75);
   flex-direction: column;
   margin-top:0vh;
   background-attachment:fixed;
+  background: transparent;
 }
 
 .para1{
-  background:url(images/homepage/para1smaller.jpg) no-repeat center;
+  background:/*url(images/homepage/para1test.jpg)*/ url(http://da2r60hdk7vk8.cloudfront.net/site/resources/css/images/homepage/para1test.jpg) no-repeat top left;
   width:100%;
-  height:100vh;
+  height:150vh;
   position:absolute;
-  background-size: 120%;
+  background-size: 200vh;
   z-index: -1;
   top:100vh;
-  background-attachment: fixed;
+  /*background-attachment: fixed;*/
 }
 
 .para2{
-  background: url(images/homepage/para2smaller.jpg) no-repeat center;
+  background: url(http://da2r60hdk7vk8.cloudfront.net/site/resources/css/images/homepage/para2smaller.jpg) no-repeat center;
   width:100%;
-  height:100vh;
+  height:102vh;
   position:absolute;
-  background-size: 200vmin;
+  background-size: 180vh;
   z-index: -1;
-  top:300vh;
+  top:289vh;
   background-attachment: fixed;
 }
 
 .para3{
-  background: url(images/homepage/para3smaller.jpg) no-repeat top;
+  background: url(http://da2r60hdk7vk8.cloudfront.net/site/resources/css/images/homepage/para3test.jpg) no-repeat center top;
   width:100%;
-  height:100vh;
+  height:101vh;
   position:absolute;
-  background-size: 250vmin;
+  background-size:180vh;
   z-index: -1;
-  top:500vh;
+  top:480vh;
   background-attachment: fixed;
 }
 
@@ -334,16 +360,18 @@ box-shadow: 0px 0px 55px 0px rgba(0,0,0,0.75);
 
 .level1{
   margin-top: 100vh;
+  padding-top: 2.5%;
   display: flex;
   flex-direction:row;
+  flex-wrap: wrap;
   background:white;
   flex-wrap:wrap;
   width:100%;
-  height: 100vh;
+  height: 90vh;
   overflow:hidden;
-  -webkit-box-shadow: 0px 0px 55px 0px rgba(0,0,0,0.75);
+  /*-webkit-box-shadow: 0px 0px 55px 0px rgba(0,0,0,0.75);
 -moz-box-shadow: 0px 0px 55px 0px rgba(0,0,0,0.75);
-box-shadow: 0px 0px 55px 0px rgba(0,0,0,0.75);
+box-shadow: 0px 0px 55px 0px rgba(0,0,0,0.75);*/
 }
 
 .level2{
@@ -352,12 +380,14 @@ box-shadow: 0px 0px 55px 0px rgba(0,0,0,0.75);
   background: white;
   flex-wrap:wrap;
   width:100%;
-  height:100vh;
-  margin-top:100vh;
+  height:90vh;
+  margin-top:101vh;
+  padding-top: 2.5%;
   overflow:hidden;
+  /*
   -webkit-box-shadow: 0px 0px 55px 0px rgba(0,0,0,0.75);
 -moz-box-shadow: 0px 0px 55px 0px rgba(0,0,0,0.75);
-box-shadow: 0px 0px 55px 0px rgba(0,0,0,0.75);
+box-shadow: 0px 0px 55px 0px rgba(0,0,0,0.75);*/
 }
 
 .level3{
@@ -366,18 +396,20 @@ box-shadow: 0px 0px 55px 0px rgba(0,0,0,0.75);
   flex-wrap:wrap;
   background: white;
   width:100%;
-  height:100vh;
+  height:90vh;
   margin-top:100vh;
+  padding-top: 2.5%;
   overflow:hidden;
-  -webkit-box-shadow: 0px 0px 55px 0px rgba(0,0,0,0.75);
--moz-box-shadow: 0px 0px 55px 0px rgba(0,0,0,0.75);
-box-shadow: 0px 0px 55px 0px rgba(0,0,0,0.75);
+/*
+  -webkit-box-shadow: -1px -21px 56px -18px rgba(0,0,0,0.75);
+  -moz-box-shadow: -1px -21px 56px -18px rgba(0,0,0,0.75);
+  box-shadow: -1px -21px 56px -18px rgba(0,0,0,0.75);*/
 }
 
 
 .portfolioitem1{
   object-fit: cover;
-  background: url(images/homepage/1test.jpg) no-repeat top center;
+  background: url(http://da2r60hdk7vk8.cloudfront.net/site/resources/css/images/homepage/1test.jpg)/*url(images/homepage/1test.jpg)*/ no-repeat top center;
   background-size: cover;
   display:flex;
   flex-direction:column-reverse;
@@ -385,24 +417,26 @@ box-shadow: 0px 0px 55px 0px rgba(0,0,0,0.75);
   width:34%;
 }
 .portfolioitem2{
-  background: url(images/homepage/2test.jpg) no-repeat top center;
+  background: url(http://da2r60hdk7vk8.cloudfront.net/site/resources/css/images/homepage/2test.jpg)/*url(images/homepage/2test.jpg)*/ no-repeat top center;
   background-size: cover;
   display:flex;
   flex-direction:column-reverse;
   height:60vh;
   width:34%;
+  min-width:300px;
 }
 .portfolioitem3{
-  background: url(images/homepage/3test.jpg) no-repeat top center;
+  background: url(http://da2r60hdk7vk8.cloudfront.net/site/resources/css/images/homepage/3test.jpg)/*url(images/homepage/3test.jpg)*/ no-repeat top center;
   background-size: cover;
   display:flex;
   flex-direction:column-reverse;
   height:60vh;
   width:34%;
+  min-width:300px;
 }
 
 .portfolioitem4{
-  background: url(images/homepage/4test.jpg) no-repeat top center;
+  background: url(http://da2r60hdk7vk8.cloudfront.net/site/resources/css/images/homepage/4test.jpg)/*url(images/homepage/4test.jpg)*/ no-repeat top center;
   background-size: cover;
   display:flex;
   flex-direction:column-reverse;
@@ -410,7 +444,7 @@ box-shadow: 0px 0px 55px 0px rgba(0,0,0,0.75);
   width:34%;
 }
 .portfolioitem5{
-  background: url(images/homepage/5test.jpg) no-repeat top center;
+  background: url(http://da2r60hdk7vk8.cloudfront.net/site/resources/css/images/homepage/5test.jpg)/*url(images/homepage/5test.jpg)*/ no-repeat top center;
   background-size: cover;
   display:flex;
   flex-direction:column-reverse;
@@ -418,7 +452,7 @@ box-shadow: 0px 0px 55px 0px rgba(0,0,0,0.75);
   width:34%;
 }
 .portfolioitem6{
-  background: url(images/homepage/6test.jpg) no-repeat top center;
+  background: url(http://da2r60hdk7vk8.cloudfront.net/site/resources/css/images/homepage/6test.jpg)/*url(images/homepage/6test.jpg)*/ no-repeat top center;
   background-size: cover;
   display:flex;
   flex-direction:column-reverse;
@@ -427,7 +461,7 @@ box-shadow: 0px 0px 55px 0px rgba(0,0,0,0.75);
 }
 
 .portfolioitem7{
-  background: url(images/homepage/7test.jpg) no-repeat top center;
+  background: url(http://da2r60hdk7vk8.cloudfront.net/site/resources/css/images/homepage/7test.jpg)/*url(images/homepage/7test.jpg)*/ no-repeat top center;
   background-size: cover;
   display:flex;
   flex-direction:column-reverse;
@@ -435,7 +469,7 @@ box-shadow: 0px 0px 55px 0px rgba(0,0,0,0.75);
   width:34%;
 }
 .portfolioitem8{
-  background: url(images/homepage/8test.jpg) no-repeat top center;
+  background: url(http://da2r60hdk7vk8.cloudfront.net/site/resources/css/images/homepage/8test.jpg)/*url(images/homepage/8test.jpg)*/ no-repeat top center;
   background-size: cover;
   display:flex;
   flex-direction:column-reverse;
@@ -443,7 +477,7 @@ box-shadow: 0px 0px 55px 0px rgba(0,0,0,0.75);
   width:34%;
 }
 .portfolioitem9{
-  background: url(images/homepage/9test.jpg) no-repeat top center;
+  background: url(http://da2r60hdk7vk8.cloudfront.net/site/resources/css/images/homepage/9test.jpg)/*url(images/homepage/9test.jpg)*/ no-repeat top center;
   background-size: cover;
   display:flex;
   flex-direction:column-reverse;
@@ -457,29 +491,97 @@ box-shadow: 0px 0px 55px 0px rgba(0,0,0,0.75);
   cursor: pointer;
   -webkit-transition: all 0.4s ease-in-out 0s;
   transition: all 0.4s ease-in-out 0s;
-  width:23%;
-  height:100vh;
-  margin-left: 8%;
-  /*min-width:300px;*/
+  width:100%; /*23*/
+  height:75vh; /*100*/
+  /*margin-left: 8%;*/
+  margin-top:1vh;
+  background-size: 55vh;
+}
+
+.items2{
+  font-size: 50px;
+  color:orange;
+  cursor: pointer;
+  -webkit-transition: all 0.4s ease-in-out 0s;
+  transition: all 0.4s ease-in-out 0s;
+  width:100%; /*23*/
+  height:80vh; /*100*/
+  /*margin-left: 8%;*/
+  background-size: 65vh;
+}
+
+.items3{
+  font-size: 50px;
+  color:orange;
+  cursor: pointer;
+  -webkit-transition: all 0.4s ease-in-out 0s;
+  transition: all 0.4s ease-in-out 0s;
+  width:100%; /*23*/
+  height:80vh; /*100*/
+  /*margin-left: 8%;*/
+  background-size: 60vh;
+}
+
+.portfolioItemHolder{
+  width:30vw;
+  height:85vh;
+  margin-left:2.5%;
+
+  display: flex;
+  flex-direction: column;
+  color:black;
+}
+
+.portfolioItemTitle{
+  width:120%;
+  margin-left: -10%;
+  height:15vh;
+  font-size: 3vmin;
+  text-align: center;
+
+  line-height: 15vh;
+  -webkit-transition: all 0.4s ease-in-out 0s;
+  transition: all 0.4s ease-in-out 0s;
 }
 
 .bottomNav{
   background: #1F2021;
   width:100%;
-  height:30vh;
+  height:10vh;
   display:flex;
   flex-direction: row;
   margin-top: 0vh;
+  visibility: hidden;
 }
 
 .backToTopButton{
   background: #1F2021;
+  margin-right: 3vw;
   color:white;
-  width:100px;
-  height:50px;
+  width:auto;
+  height:10vh;
   text-align: center;
   vertical-align: middle;
-  line-height: 50px;
+  line-height: 10vh;
+  -moz-user-select: -moz-none;
+  -khtml-user-select: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  cursor: pointer;
+  margin-left: 1vw;
+  padding:.3vw;
+}
+
+.bottomContactButton{
+  margin-right: 3vw;
+  background: #1F2021;
+  color:white;
+  width:auto;
+  height:10vh;
+  text-align: center;
+  vertical-align: middle;
+  line-height: 10vh;
   -moz-user-select: -moz-none;
   -khtml-user-select: none;
   -webkit-user-select: none;
@@ -488,14 +590,65 @@ box-shadow: 0px 0px 55px 0px rgba(0,0,0,0.75);
   cursor: pointer;
 }
 
-.contactholder{
+.bottomLinkedinButton{
+  margin-right: 3vw;
+  background: #1F2021;
+  color:white;
+  width:auto;
+  height:10vh;
+  text-align: center;
+  vertical-align: middle;
+  line-height: 10vh;
+  -moz-user-select: -moz-none;
+  -khtml-user-select: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  cursor: pointer;
+}
+
+.bottomInstaButton{
+  margin-right: 3vw;
+  background: #1F2021;
+  color:white;
+  width:auto;
+  height:10vh;
+  text-align: center;
+  vertical-align: middle;
+  line-height: 10vh;
+  -moz-user-select: -moz-none;
+  -khtml-user-select: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  cursor: pointer;
+}
+
+.contactpanel{
   width: auto;
   height:auto;
   border-radius: 10px;
-  margin-left: 33%;
   margin-top:0px;
+  margin-left: 5vw;
+  margin-top: 10vh;
   display: flex;
   flex-direction: column;
+}
+
+.contactPageHolder{
+  height:77vh;
+  width:100%;
+  display: flex;
+  margin-top: -5vh;
+  flex-direction: row;
+}
+
+.contactImage{
+  background: url(images/homepage/ps/ps8smaller.jpg) center top;
+  height:70vh;
+  width:30vw;
+  margin-left: 10vw;
+  background-size: cover;
 }
 
 .emailForm{
@@ -525,6 +678,13 @@ box-shadow: 0px 0px 55px 0px rgba(0,0,0,0.75);
 .submitInput{
   margin-top: 3vmin;
   width:10vw;
+  background: #1f2021;
+  color:white;
+  width:10vw;
+  height:5vh;
+  font-size: 2.5vmin;
+  font-family: 'Source Sans Pro', sans-serif;
+  cursor: pointer;
 }
 
 .contacticon{
@@ -553,7 +713,7 @@ box-shadow: 0px 0px 55px 0px rgba(0,0,0,0.75);
 .projectPicture{
   background: green;
   border: solid white 2px;
-  min-width: 300px;
+  min-width: 250px;
 }
 
 .projectPicsHolder{
@@ -581,14 +741,15 @@ box-shadow: 0px 0px 55px 0px rgba(0,0,0,0.75);
 }
 
 .exitProject{
+  z-index: 100;
   position: fixed;
   color: black;
-  right: 1vw;
+  right: .5vw;
   width:10vw;
   height:10vh;
   text-align: center;
-  top:10vh;
-  font-size: 10vmin;
+  top:9vh;
+  font-size: 7vmin;
   -moz-user-select: -moz-none;
   -khtml-user-select: none;
   -webkit-user-select: none;
@@ -598,10 +759,10 @@ box-shadow: 0px 0px 55px 0px rgba(0,0,0,0.75);
 }
 
 .projectTitle{
-  font-size: 10vmin;
+  font-size: 5vmin;
   margin-top: 10vh;
   color:black;
-  margin-left: 25vw;
+  text-align: center;
 }
 
 .dividerLine{
@@ -612,71 +773,353 @@ box-shadow: 0px 0px 55px 0px rgba(0,0,0,0.75);
 }
 
 .projectDescription{
-  font-size: 3vmin;
+  font-size: 2vmin;
   color:#1f2021;
-  width:50vw;
-  margin-left: 25vw;
+  width:70vw;
+  margin-left: 15vw;
   margin-bottom: 5vh;
   text-align: center;
 }
 
 /*LITTLE BLACK DRESS IMAGES*/
 #lbd1{
-  background: url(images/homepage/lbd/lbd1.jpg) center top;
+  background: url(images/homepage/lbd/lbd1smaller.jpg) no-repeat center top;
   background-size:cover;
-  height:80vh;
-  width:50vw;
+  height:70vh;
+  width:20vw;
 }
 
 #lbd2{
-  background: url(images/homepage/lbd/lbd2.jpg) center top;
+  background: url(images/homepage/lbd/lbd2smaller.jpg) no-repeat center;
   background-size: cover;
-  height:80vh;
-  width:30vw;
+  height:70vh;
+  width:28vw;
 }
 
 #lbd3{
-  background: url(images/homepage/lbd/lbd3.jpg) center top;
+  background: url(images/homepage/lbd/lbd4smaller.jpg) no-repeat center;
   background-size:cover;
-  height:80vh;
-  width:50vw;
+  height:70vh;
+  width:27vw;
 }
 
 #lbd4{
-  background: url(images/homepage/lbd/lbd4.jpg) center top;
+  background: url(images/homepage/lbd/lbd3smaller.jpg) no-repeat center top;
   background-size:cover;
-  width:30vw;
-  height:80vh;
+  width:50vw;
+  height:70vh;
 }
 
 #lbd5{
-  background: url(images/homepage/lbd/lbd5.jpg) center top;
+  background: url(images/homepage/lbd/lbd5smaller.jpg) no-repeat  center top;
   background-size:cover;
-  width:20vw;
+  width:25vw;
   height:70vh;
 }
 
 #lbd6{
-  background: url(images/homepage/lbd/lbd6.jpg) center top;
+  background: url(images/homepage/lbd/lbd8smaller.jpg) no-repeat center top;
   background-size:cover;
-  width:60vw;
+  width:28vw;
   height:70vh;
+  min-width: 390px;
 }
 
 #lbd7{
-  background: url(images/homepage/lbd/lbd7.jpg) left top;
+  background: url(images/homepage/lbd/lbd6smaller.jpg) no-repeat left top;
   background-size:cover;
-  width:50vw;
-  height:60vh;
+  width:40vw;
+  height:45vh;
 }
 
 #lbd8{
-  background: url(images/homepage/lbd/lbd8.jpg) left top;
+  background: url(images/homepage/lbd/lbd7smaller.jpg) no-repeat left top;
   background-size:cover;
-  width:30vw;
-  height:60vh;
+  width:37vw;
+  height:45vh;
+  min-width:290px;
 }
 
+#kimono1{
+  background: url(images/homepage/kimono/kimono1smaller.jpg) no-repeat center top;
+  background-size: cover;
+  width:20vw;
+  height:70vh;
+}
+
+#kimono2{
+  background: url(images/homepage/kimono/kimono2smaller.jpg) no-repeat center top;
+  background-size: cover;
+  width:20vw;
+  height:70vh;
+}
+
+#kimono3{
+  background: url(images/homepage/kimono/kimono3smaller.jpg) no-repeat right top;
+  background-size: cover;
+  width:20vw;
+  height:70vh;
+}
+
+#kimono4{
+  background: url(images/homepage/kimono/kimono4smaller.jpg) no-repeat center top;
+  background-size: cover;
+  width:20vw;
+  height:70vh;
+}
+
+#kimono5{
+  background: url(images/homepage/kimono/kimono5smaller.jpg) no-repeat center top;
+  background-size: cover;
+  width:30vw;
+  height:70vh;
+}
+
+#kimono6{
+  background: url(images/homepage/kimono/kimono6smaller.jpg) no-repeat center top;
+  background-size: cover;
+  width:30vw;
+  height:70vh;
+}
+
+#kimono7{
+  background: url(images/homepage/kimono/kimono7smaller.jpg) no-repeat center top;
+  background-size: cover;
+  width:20vw;
+  height:70vh;
+}
+
+#ps1{
+  background: url(images/homepage/ps/ps1smaller.jpg) no-repeat center top;
+  background-size: cover;
+  width: 27vw;
+  height:70vh;
+  min-width: 250px;
+}
+
+#ps2{
+  background: url(images/homepage/ps/ps2smaller.jpg) no-repeat right top;
+  background-size: cover;
+  width: 21vw;
+  height:70vh;
+  min-width: 250px;
+}
+
+#ps3{
+  background: url(images/homepage/ps/ps3smaller.jpg) no-repeat center top;
+  background-size: cover;
+  width: 33vw;
+  height:70vh;
+  min-width: 387px;
+}
+
+#ps4{
+  background: url(images/homepage/ps/ps4smaller.jpg) no-repeat right top;
+  background-size: cover;
+  width: 30vw;
+  height:70vh;
+  min-width: 387px;
+}
+
+#ps5{
+  background: url(images/homepage/ps/ps5smaller.jpg) no-repeat center top;
+  background-size: cover;
+  width: 20vw;
+  height:70vh;
+  min-width: 387px;
+}
+
+#ps6{
+  background: url(images/homepage/ps/ps6smaller.jpg) no-repeat center bottom;
+  background-size: cover;
+  width: 24vw;
+  height:70vh;
+  min-width: 200px;
+}
+
+#ps7{
+  background: url(images/homepage/ps/ps7smaller.jpg) no-repeat center top;
+  background-size:cover;
+  width: 50vw;
+  height:70vh;
+  min-width: 10px;
+}
+
+#ps8{
+  background: url(images/homepage/ps/ps8smaller.jpg) no-repeat center top;
+  background-size: cover;
+  width: 31vw;
+  height:70vh;
+  min-width: 10px;
+}
+
+#fw1{
+  background: url(images/homepage/formalwear/fw1smaller.jpg) no-repeat center top;
+  background-size: cover;
+  width:27vw;
+  height: 70vh;
+}
+
+#fw2{
+  background: url(images/homepage/formalwear/fw4smaller.jpg) no-repeat center top;
+  background-size: cover;
+  width:24vw;
+  height: 70vh;
+}
+
+#fw3{
+  background: url(images/homepage/formalwear/fw2smaller.jpg);
+  background-size: cover;
+  background-position: -150px;
+  width:27vw;
+  height:70vh;
+}
+
+#fw4{
+  background: url(images/homepage/formalwear/fw3smaller.jpg) no-repeat center top;
+  background-size: cover;
+  width:20vw;
+  height: 65vh;
+}
+
+#cb1{
+  background: url(images/homepage/cascadingblouse/cb1smaller.jpg) no-repeat center top;
+  background-size: cover;
+  width: 30vw;
+  height:70vh;
+}
+
+#cb2{
+  background: url(images/homepage/cascadingblouse/cb2smaller.jpg) no-repeat center top;
+  background-size: cover;
+  width: 25vw;
+  height:70vh;
+}
+
+#cb3{
+  background: url(images/homepage/cascadingblouse/cb3smaller.jpg) no-repeat center top;
+  background-size: cover;
+  width: 25vw;
+  height:70vh;
+}
+
+#cb4{
+  background: url(images/homepage/cascadingblouse/cb4smaller.jpg) no-repeat center top;
+  background-size: cover;
+  width: 25vw;
+  height:70vh;
+}
+
+#cb5{
+  background: url(images/homepage/cascadingblouse/cb5smaller.jpg) no-repeat center top;
+  background-size: cover;
+  width: 25vw;
+  height:70vh;
+}
+
+#cb6{
+  background: url(images/homepage/cascadingblouse/cb6smaller.jpg) no-repeat center top;
+  background-size: cover;
+  width: 30vw;
+  height:70vh;
+}
+
+#cb7{
+  background: url(images/homepage/cascadingblouse/cb7smaller.jpg) no-repeat center top;
+  background-size: cover;
+  width: 25vw;
+  height:70vh;
+}
+
+#lcs1{
+  background: url(images/homepage/lasercutskirt/lcs1smaller.jpg) no-repeat center right;
+  background-position: -100px;
+  background-size: cover;
+  width: 10vw;
+  height:70vh;
+}
+
+#lcs2{
+  background: url(images/homepage/lasercutskirt/lcs2smaller.jpg) no-repeat left top;
+  background-size: cover;
+  width: 20vw;
+  height:70vh;
+  min-width: 387px;
+}
+
+#lcs3{
+  background: url(images/homepage/lasercutskirt/lcs3smaller.jpg) no-repeat center top;
+  background-size: cover;
+  width: 10vw;
+  height:70vh;
+}
+
+#lcs4{
+  background: url(images/homepage/lasercutskirt/lcs5smaller.jpg) no-repeat center top;
+  background-size: cover;
+  width: 24vw;
+  height:70vh;
+  min-width: 300px;
+}
+
+#lcs5{
+  background: url(images/homepage/lasercutskirt/lcs6smaller.jpg) no-repeat center top;
+  background-size: cover;
+  width: 24vw;
+  height:70vh;
+  min-width: 300px;
+}
+
+#lcs6{
+  background: url(images/homepage/lasercutskirt/lcs7smaller.jpg) no-repeat center top;
+  background-size: cover;
+  width: 33vw;
+  height:70vh;
+  min-width: 400px;
+}
+
+#lcs7{
+  background: url(images/homepage/lasercutskirt/lcs4smaller.jpg) no-repeat center top;
+  background-size: cover;
+  width: 29vw;
+  height:70vh;
+}
+
+#illustration1{
+  background: url(images/homepage/illustrations/1.jpg) no-repeat center top;
+  background-size:contain;
+  width: 40vw;
+  height:70vh;
+  min-width: 400px;
+}
+#illustration2{
+  background: url(images/homepage/illustrations/2.jpg) no-repeat center top;
+  background-size:contain;
+  width: 40vw;
+  height:70vh;
+  min-width: 400px;
+}
+#illustration3{
+  background: url(images/homepage/illustrations/3.jpg) no-repeat center top;
+  background-size:contain;
+  width: 20vw;
+  height:70vh;
+  min-width: 200px;
+}
+#illustration4{
+  background: url(images/homepage/illustrations/5.jpg) no-repeat center top;
+  background-size:contain;
+  width: 20vw;
+  height:70vh;
+  min-width: 200px;
+}
+#illustration5{
+  background: url(images/homepage/illustrations/4.jpg) no-repeat center top;
+  background-size:contain;
+  width: 40vw;
+  height:70vh;
+  min-width: 400px;
+}
 /*************************/
 
 .resumeImage{
@@ -691,4 +1134,59 @@ box-shadow: 0px 0px 55px 0px rgba(0,0,0,0.75);
   position: fixed;
   overflow-y: scroll;
   top: 0;
+}
+
+
+/*****PDF VIEWER*******/
+.pdfHolder{
+  margin-top: 20vh;
+  width:80vw;
+  height:70vh;
+  margin-left: 0vw;
+  position:relative;
+  overflow-y: scroll;
+}
+
+.pdfImage{
+  margin-top:1vh;
+  margin-left:20vh;
+}
+
+/*
+.pdfHolder{
+  width:100%;
+  height:70vh;
+  min-height: 500px;
+  overflow:scroll;
+  background: red;
+}
+
+/**********************/
+
+
+
+/***NEW PDF STUFF***/
+
+.pdfContainer {
+    width: 100%;
+    height: 85vh;
+    margin-top:11vh;
+    white-space: nowrap;
+    position: relative;
+    overflow-x: scroll;
+    overflow-y: hidden;
+    -webkit-overflow-scrolling: touch;
+    margin-bottom: 5vh;
+    padding-left: 2vw;
+}
+
+.pdfContainer div{
+    width: 40%;
+    background-color: #eee;
+    float: none;
+    height: 100%;
+    /*margin: 0 3%;*/
+    display: inline-block;
+    zoom: 1;
+    min-width: 500px;
 }
